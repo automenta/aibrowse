@@ -14,7 +14,7 @@ var browserLogic = function() {
     /**
      * Virtual Browser, we could have multiple instances in the future.
      */
-    phantom.create("--web-security=no", "--ignore-ssl-errors=yes", function (ph) {
+    phantom.create("--web-security=no", "--ignore-ssl-errors=true", function (ph) {
         browser = ph
         console.log("Phantom Bridge Initiated")
     })

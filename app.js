@@ -29,11 +29,14 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(app.router)
 app.use(express.errorHandler())
 
+
+var verbose = false;
+
 /**
  * INIT
  */
 var //messages (requests and validation) + outgoing errors and broadcasts
-    debugEvents = require("./private/socket/debugEvents")(io)
+    debugEvents = require("./private/socket/debugEvents")(io, verbose)
   , pageEvents = require("./private/socket/pageEvents")
   , browserEvents = require('./private/socket/browserEvents')(io) //broadcast browser
 

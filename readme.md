@@ -1,16 +1,28 @@
 # Collaborative Virtual Browser
 
-Example of using PhantomJS with Node, Angular and Socket.io to create a Virtual Browser which may be used by multiple devices collaboratively.
+Uses PhantomJS with Node, Angular and Socket.io to create a Virtual Browser which may be used by multiple devices collaboratively.
 
-This is an extract from my Master Thesis at ETHZ (GlobIS): **An infrastructure for cross-device mashups**
+This is an extract from Pongells's Master Thesis at ETHZ (GlobIS): **An infrastructure for cross-device mashups**
+
+
+# AI Web Browser that Can Learn and Follow High-Level Commands (Coming Soon)
+
+Since all browser interaction can be recorded, sequences of events can be associated with the page context, and the user's goal.
+
+* Watch: record interaction events (and paths to the associated elements) and associate them with features of the current page (such as the domain name, page structure, etc...), and an optionally human-specified Goal label.
+* Do: a menu of known Goals (consisting of browser events applied to page elements) which may apply to the current page
+
+This represents an embodiment environment for cognitive agents to intelligently browse the web.
+
 
 ## Installation
 
 Install PhantomJS and add the runnable to the PATH env. variable (i.e. typing `phantomjs` in a terminal should start PhantomJS).
 
-Use `package.json` (the usual `npm install` in the main folder) to install the Node modules. 
+```
+npm install ; cd public ; bower install ; cd ..
+```
 
-Go into the `public` folder and use `bower.json` (the usual `bower install`) to install the client dependencies.
 
 ## How does it work?
 
@@ -24,7 +36,7 @@ You can see it as a remote desktop kind of application, but with js and html pag
 
 
 ##Note
-Disable logging if it gets slow. I am printing a shitload of stuff. Each time a page changes or it finishes loading resources, the whole page is sent to the registered clients.
+Disable logging if it gets slow by setting the 'verbose' flag in app.js.  Otherwise it will print a lot of output. Each time a page changes or it finishes loading resources, the whole page is sent to the registered clients.
 
 A batter way to do this would be to use MutationObserver (or some other trick) and only send updates instead of the whole document.
 
